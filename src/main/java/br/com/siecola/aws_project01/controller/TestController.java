@@ -20,10 +20,24 @@ public class TestController {
         return ResponseEntity.ok("Name: " + name);
     }
 
+    @GetMapping("/cat/{name}")
+    public ResponseEntity<?> catTest(@PathVariable String name) {
+        LOG.info("Test controller - catName: {}", name);
+
+        return ResponseEntity.ok("Name: " + name);
+    }
+
     @GetMapping("/dog/color")
     public ResponseEntity<?> dogColor() {
         LOG.info("Test controller - Always black!");
 
         return ResponseEntity.ok("Always black!");
+    }
+
+    @GetMapping("/dog/color2")
+    public ResponseEntity<?> dogColor2() {
+        LOG.info("Test controller - Always black!");
+
+        return ResponseEntity.ok("Always black! Second");
     }
 }
